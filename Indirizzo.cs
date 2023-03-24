@@ -1,26 +1,51 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
-public record Indirizzo
+public class Indirizzo
 {
-    public Indirizzo( string nome, string cognome, string via, string citta, string provincia, int zip)
-    {
+        public Indirizzo(string? nome, string? cognome, string? via, string? citta, string? provincia, string? zip)
+        {
+            Nome = nome;
+            Cognome = cognome;
+            Via = via;
+            Citta = citta;
+            Provincia = provincia;
+            Zip = zip;
+        }
 
-        nome = nome;
-        cognome = cognome;
-        via = via;
-        citta = citta;
-        provincia = provincia;
-        zip = zip;
-    }
-    public string nome { get; set; }
-    public string cognome { get; set;}
-    public string via { get; set; }
-    public string citta { get; set; }
-    public string provincia { get; set; }
-    public int zip { get; set; }
+        public Indirizzo(string? nome, string? cognome, string? secondoNome,  string? via, string? citta, string? provincia, string? zip)
+        {
+            Nome = nome;
+            Cognome = cognome;
+            SecondoNome = secondoNome;
+            Via = via;
+            Citta = citta;
+            Provincia = provincia;
+            Zip = zip;
+        }
+
+        public Indirizzo(string? nome, string? citta, string? provincia, string zip)
+        {
+            Nome = nome;
+            Citta = citta;
+            Provincia = provincia;
+            Zip = zip;
+
+        }
+
+    public string? Nome { get; set; }
+    public string? Cognome { get; set; }
+    public string? SecondoNome { get; set; }
+    public string? Via { get; set; }
+    public string Citta { get; set; }
+    public string Provincia { get; set; }
+    public string Zip { get; set; }
+    
 }
-}
+
