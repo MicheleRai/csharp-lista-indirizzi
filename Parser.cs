@@ -32,7 +32,19 @@ public static class Parser
                 if (chunks[i] == "") chunks[i] = "( Non trovato )";
             }
 
-            if (chunks.Length == 7)
+            if (chunks.Length == 4)
+            {
+                var nome = chunks[0];
+                var cognome = "( Non trovato )";
+                var via = "( Non trovato )";
+                var citta = chunks[1];
+                var provincia = chunks[2];
+                var zip = chunks[3];
+                var indirizzo = new Indirizzo(nome, cognome, via, citta, provincia, zip);
+                indirizzi.Add(indirizzo);
+
+            }
+            else if (chunks.Length == 7)
             {
                 var nome = chunks[0];
                 var cognome = chunks[1];
@@ -43,26 +55,17 @@ public static class Parser
                 var zip = chunks[6];
                 var indirizzo = new Indirizzo(nome, cognome, secondoNome, via, citta, provincia, zip);
                 indirizzi.Add(indirizzo);
-            }
-            else if (chunks.Length == 4)
-            {
-                var nome = chunks[0];
-                var citta = chunks[1];
-                var provincia = chunks[2];
-                var zip = chunks[3];
-                var indirizzo = new Indirizzo(nome, citta, provincia, zip);
-                indirizzi.Add(indirizzo);
 
             }
             else
             {
-                var name = chunks[0];
-                var surname = chunks[1];
-                var street = chunks[2];
-                var city = chunks[3];
-                var province = chunks[4];
-                var ZIP = chunks[5];
-                var indirizzo = new Indirizzo(name, surname, street, city, province, ZIP);
+                var nome = chunks[0];
+                var cognome = chunks[1];
+                var via = chunks[2];
+                var citta = chunks[3];
+                var provincia = chunks[4];
+                var zip = chunks[5];
+                var indirizzo = new Indirizzo(nome, cognome, via, citta, provincia, zip);
                 indirizzi.Add(indirizzo);
             }
         }

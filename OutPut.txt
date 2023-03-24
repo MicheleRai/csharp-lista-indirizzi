@@ -37,7 +37,7 @@ CAP:  100101
 ----------------
 
 ----------------
-Nome e Cognome: Joan  
-Indirizzo: , SomeTown ( SD)
+Nome e Cognome: Joan  ( Non trovato )
+Indirizzo: ( Non trovato ), SomeTown ( SD)
 CAP:  00298
 ----------------
